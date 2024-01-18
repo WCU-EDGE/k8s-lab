@@ -13,7 +13,7 @@ while [ ! -d /opt/keys/flagdir ]; do
   sleep 10
 done
 
-while [ ! -f /opt/keys/node_token ]; do
+while [ ! -f /opt/keys/node-token ]; do
   sleep 20
 done
 
