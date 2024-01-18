@@ -24,11 +24,8 @@ do
 done
 
 mkdir -p /etc/rancher/rke2/
-
-# vim /etc/rancher/rke2/config.yaml
-# server: https://<server>:9345
-# token: <token from server node>
-
+echo "server: https://192.168.1.1:9345" > /etc/rancher/rke2/config.yaml
+echo "token: $(cat /opt/keys/node-token)" >> /etc/rancher/rke2/config.yaml
 systemctl start rke2-agent.service
 
 #command=`tail -n 2 /opt/keys/kube.log | tr -d '\\'`
