@@ -39,4 +39,4 @@ while IFS= read -r line; do
   mkdir -p /users/$line/.kube
   sudo cp -i /etc/rancher/rke2/rke2.yaml /users/$line/.kube/config
   sudo chown $line: /users/$line/.kube/config
-done < <( ls -l /users | grep 4096 | cut -d' ' -f3 )
+done < <( cat /etc/passwd | grep bash | cut -d':' -f1 )
